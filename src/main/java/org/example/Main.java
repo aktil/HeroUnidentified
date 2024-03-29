@@ -15,8 +15,12 @@ public class Main extends DOTNames  {
 
     // Map to associate IDs with names
 
+    WebDriver driver = new ChromeDriver();
+
 
     public static void main(String[] args) {
+
+
         String[] ids = {
                 "3487141", "3487333", "3487141", "2520708", "3172771",
                  "3844698",  "4021420", "3495885", "3487333",
@@ -42,6 +46,9 @@ public class Main extends DOTNames  {
         //TODO
 
         // need to check this company : "3933333" and "4009519"
+        // ZZZZZZAlmaz Logistics LLC
+
+
 
         int unidentifiedCount = 0; // Counter for unidentified events
 
@@ -53,6 +60,11 @@ public class Main extends DOTNames  {
 
         System.out.println("Total number of unidentified events done: " + unidentifiedCount);
     }
+
+
+
+
+
 
     public static void push(String id, int index) {
         String name = idToNameMap.get(id);
@@ -78,8 +90,9 @@ public class Main extends DOTNames  {
 
         // Set the path to the ChromeDriver executable
         System.setProperty("webdiver.chrome.driver", "C:\\Users\\User\\Desktop\\Hero_autorefresher\\chromedriver_win32.zip");
-        WebDriver driver = new ChromeDriver();
+
         // driver.manage().window().maximize();
+        WebDriver driver = new ChromeDriver();
 
         driver.get("https://portal.heroeld.com/service-login");
 
