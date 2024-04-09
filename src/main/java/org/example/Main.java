@@ -110,7 +110,7 @@ public class Main extends DOTNames  {
 
             driver.get("https://portal.heroeld.com/service-login");
 
-            new WebDriverWait(driver, Duration.ofSeconds(50))
+            new WebDriverWait(driver, Duration.ofSeconds(60))
                 .until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector("div.spinner"))));
 
             driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("info@heroeld.com");
