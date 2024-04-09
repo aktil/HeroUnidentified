@@ -33,8 +33,9 @@
         <groupId>org.telegram</groupId>
         <artifactId>telegrambots</artifactId>
         <version>LATEST</version> <!-- Make sure to use the correct version -->
-    </dependency><!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v123 -->
+    </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v123 -->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-devtools-v123</artifactId>
