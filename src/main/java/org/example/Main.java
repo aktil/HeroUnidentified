@@ -110,7 +110,7 @@ public class Main extends DOTNames  {
 
             driver.get("https://portal.heroeld.com/service-login");
 
-            new WebDriverWait(driver, Duration.ofSeconds(30))
+            new WebDriverWait(driver, Duration.ofSeconds(60))
                     .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.spinner")));
 
             driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("info@heroeld.com");
@@ -118,16 +118,16 @@ public class Main extends DOTNames  {
 
             driver.findElement(By.xpath("//button[contains(@class, 'ui-button') and @type='submit']")).click();
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(@class, 'filter-column') and .//span[text()='DOT Number']]//input[@placeholder='Search']")));
             element.sendKeys(id);
 
-            WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+            WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(60));
             WebElement link = wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='ui-cell-data']/a[text()='Navigate']")));
             link.click();
 
 
-            new WebDriverWait(driver, Duration.ofSeconds(30))
+            new WebDriverWait(driver, Duration.ofSeconds(60))
                     .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.spinner")));
 
             try {
@@ -136,7 +136,7 @@ public class Main extends DOTNames  {
 
 
                 // Add a wait to ensure the page is loaded
-                WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+                WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(60));
                 wait3.until(ExpectedConditions.urlContains("unidentified-events"));
                 WebElement link2 = driver.findElement(By.xpath("//a[@href='/portal/unidentified-events']"));
 
@@ -151,11 +151,11 @@ public class Main extends DOTNames  {
 
             try {
                 // Wait for the covering element to disappear
-                new WebDriverWait(driver, Duration.ofSeconds(30))
+                new WebDriverWait(driver, Duration.ofSeconds(60))
                         .until(ExpectedConditions.invisibilityOfElementLocated(By.id("hos-loader")));
 
                 // Click on the button using JavaScript
-                WebElement button = new WebDriverWait(driver, Duration.ofSeconds(30))
+                WebElement button = new WebDriverWait(driver, Duration.ofSeconds(60))
                         .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='Manage Erroneous Data']")));
 
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -164,7 +164,7 @@ public class Main extends DOTNames  {
 
                 try {
                     // Wait for the checkbox element to be clickable
-                    WebElement checkbox = new WebDriverWait(driver, Duration.ofSeconds(30))
+                    WebElement checkbox = new WebDriverWait(driver, Duration.ofSeconds(60))
                             .until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/div/portal/div/div/div[3]/unidentified-events-page/div[1]/div/div/content-fit/div/div/p-datatable/div/div/table/thead/tr/th[10]/span/p-checkbox/div/div[2]")));
 
                     // Check if the checkbox is not already selected
@@ -174,7 +174,7 @@ public class Main extends DOTNames  {
                     }
 
 
-                    WebElement link_after_checkbox = new WebDriverWait(driver, Duration.ofSeconds(30))
+                    WebElement link_after_checkbox = new WebDriverWait(driver, Duration.ofSeconds(60))
                             .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/portal/div/div/div[3]/unidentified-events-page/div[3]/a")));
                     link_after_checkbox.click();
 
