@@ -110,7 +110,7 @@ public class Main extends DOTNames  {
 
             driver.get("https://portal.heroeld.com/service-login");
 
-            new WebDriverWait(driver, Duration.ofSeconds(30))
+            new WebDriverWait(driver, Duration.ofSeconds(50))
                 .until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector("div.spinner"))));
 
             driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("info@heroeld.com");
@@ -118,11 +118,11 @@ public class Main extends DOTNames  {
 
             driver.findElement(By.xpath("//button[contains(@class, 'ui-button') and @type='submit']")).click();
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(@class, 'filter-column') and .//span[text()='DOT Number']]//input[@placeholder='Search']")));
             element.sendKeys(id);
 
-            WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(30));
             WebElement link = wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='ui-cell-data']/a[text()='Navigate']")));
             link.click();
 
