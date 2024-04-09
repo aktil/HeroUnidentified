@@ -20,6 +20,12 @@
             <artifactId>selenium-java</artifactId>
             <version>LATEST</version> <!-- Replace with the desired version number -->
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.webdriver/webdriver-selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.webdriver</groupId>
+            <artifactId>webdriver-selenium</artifactId>
+            <version>0.9.7376</version>
+        </dependency>
 
 
 

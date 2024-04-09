@@ -16,7 +16,6 @@ public class DOTNames {
         idToNameMap.put("3495885", "AINI LLC");
         idToNameMap.put("3299997", "AJS Express LLC");
         idToNameMap.put("3961778", "AKBAR CORP INC");
-        idToNameMap.put("3940221", "Almaz Logistics LLC");
         idToNameMap.put("3021498", "AMERICAN RALLY TRANSPORT LLC");
         idToNameMap.put("4050820", "AMG LINE LLC");
         idToNameMap.put("2823428", "AMPM TRANSPORT INC");
