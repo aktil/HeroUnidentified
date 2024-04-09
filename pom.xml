@@ -1,44 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.4
+    </version>
+    <relativePath/> <!-- lookup parent from repository -->
+</parent>
+<groupId>org.example</groupId>
+<artifactId>Tes1</artifactId>
+<version>1.0-SNAPSHOT</version>
+<properties>
+    <java.version>17</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+<dependencies>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.19.0</version> <!-- Replace with the desired version number -->
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.webdriver/webdriver-selenium -->
+    <dependency>
+        <groupId>org.seleniumhq.webdriver</groupId>
+        <artifactId>webdriver-selenium</artifactId>
+        <version>0.9.7376</version>
+    </dependency>
 
-    <groupId>org.example</groupId>
-    <artifactId>Tes1</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <dependency>
+        <groupId>org.telegram</groupId>
+        <artifactId>telegrambots</artifactId>
+        <version>LATEST</version> <!-- Make sure to use the correct version -->
+    </dependency><!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v123 -->
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>LATEST</version> <!-- Replace with the desired version number -->
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.webdriver/webdriver-selenium -->
-        <dependency>
-            <groupId>org.seleniumhq.webdriver</groupId>
-            <artifactId>webdriver-selenium</artifactId>
-            <version>0.9.7376</version>
-        </dependency>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-devtools-v123</artifactId>
+        <version>4.19.0</version>
+    </dependency>
 
 
+</dependencies>
 
-
-        <dependency>
-            <groupId>org.telegram</groupId>
-            <artifactId>telegrambots</artifactId>
-            <version>LATEST</version> <!-- Make sure to use the correct version -->
-        </dependency>
-
-
-
-    </dependencies>
-
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+            <configuration>
+                <skipTests>true</skipTests>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 
 </project>

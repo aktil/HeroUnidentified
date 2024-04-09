@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.lang.System;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -75,9 +76,15 @@ public class Main extends DOTNames  {
             message2.setChatId("6065188925"); // Replace "YOUR_SECOND_CHAT_ID" with the second chat ID
             message2.setText("Unidentified #" + index + ": " + name + " cleaned up");
 
+
+            SendMessage message3 = new SendMessage();
+            message3.setChatId("1156716372"); // Replace "YOUR_SECOND_CHAT_ID" with the second chat ID
+            message3.setText("Unidentified #" + index + ": " + name + " cleaned up");
+
             try {
                 bot.execute(message1);
                 bot.execute(message2);
+                bot.execute(message3);
             } catch (TelegramApiException e) {
                 System.err.println("Failed to send message: " + e.getMessage());
             }
@@ -88,17 +95,23 @@ public class Main extends DOTNames  {
 
 
         // Set the path to the ChromeDriver executable
-        System.setProperty("webdiver.chrome.driver", "C:\\Users\\User\\Desktop\\Hero_autorefresher\\chromedriver_win32.zip");
 
         // driver.manage().window().maximize();
-        WebDriver driver = new ChromeDriver();
 
+        ChromeOptions options = new ChromeOptions();
 
+        options.addArguments("--no-sandbox");
+
+        options.addArguments("--disable-gpu");
+
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+
+        WebDriver driver = new ChromeDriver(options);
 
             driver.get("https://portal.heroeld.com/service-login");
 
             new WebDriverWait(driver, Duration.ofSeconds(30))
-                    .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.spinner")));
+                .until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector("div.spinner"))));
 
             driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("info@heroeld.com");
             driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("INFO4ELD123321!");
